@@ -9,7 +9,7 @@ export const sendMail = async (email, subject, text) => {
   });
 
   var mailOptions = {
-    from: process.env.ADMIN_EMAIL,
+    from: "dschakri9@gmail.com",
     to: email,
     subject: subject,
     text: text,
