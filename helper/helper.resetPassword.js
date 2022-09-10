@@ -31,6 +31,7 @@ export const helper = {
     );
 
     let link = `https://reset-password-client-chakri.netlify.app/resetPassword/${userDB._id}/${token}`;
+    // let link = `http://localhost:3000/resetPassword/${userDB._id}/${token}`;
 
     await sendMail(userDB.email, "Password Reset", `${link}`);
     res.status(200).send({

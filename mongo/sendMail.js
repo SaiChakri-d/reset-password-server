@@ -1,7 +1,9 @@
 import nodemailer from "nodemailer";
 export const sendMail = async (email, subject, text) => {
   var transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.zoho.in",
+    port: 465,
+    secure: true, //ssl
     auth: {
       user: process.env.RESET_MAILID,
       pass: process.env.RESET_MAILPASS,
@@ -9,7 +11,7 @@ export const sendMail = async (email, subject, text) => {
   });
 
   var mailOptions = {
-    from: "dschakri9@gmail.com",
+    from: process.env.RESET_MAILID,
     to: email,
     subject: subject,
     text: text,
