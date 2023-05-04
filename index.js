@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 await mongo.connectDB();
-const PORT = process.env.PORT || 8080;
+const port = process.env.PORT || 8080;
 app.get("/", (req, res) => {
   res.send("Server is running successfully");
 });
@@ -16,6 +16,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/users", usersRoute);
 app.use("/resetPassword", resetRoute);
-app.listen(PORT, () =>
-  console.log(`Server is running successfully on PORT ${PORT}`)
+app.listen(port, () =>
+  console.log(`Server is running successfully at ${port}`)
 );
