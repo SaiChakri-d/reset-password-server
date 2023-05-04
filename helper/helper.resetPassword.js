@@ -33,7 +33,8 @@ export const helper = {
     let link = `https://reset-password-client-chakri.netlify.app/resetPassword/${userDB._id}/${token}`;
     // let link = `http://localhost:3000/resetPassword/${userDB._id}/${token}`;
 
-    await sendMail(userDB.email, "Password Reset App - Reset your password", html, `${link}`);
+    await sendMail(userDB.email, "Password Reset App - Reset your password", `<p>Hello! ${email}, You have requested to reset your password.</p>
+    <p>Please click the following link to reset your password: ${link}`);
     res.status(200).send({
       message: "Reset link sent to mail",
     });
