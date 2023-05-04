@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
+dotenv.config()
+
 export const sendMail = async (email, subject, text) => {
-  var transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
     host: "smtppro.zoho.in",
     port: 465,
     secure: true, //ssl
