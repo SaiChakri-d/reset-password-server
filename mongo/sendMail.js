@@ -8,6 +8,9 @@ export const sendMail = async (email, subject, text) => {
       user: process.env.RESET_MAILID,
       pass: process.env.RESET_MAILPASS,
     },
+    tls: {
+      rejectUnauthorized: false,
+    },
   });
 
   var mailOptions = {
